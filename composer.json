@@ -2,16 +2,36 @@
 	"name": "phpgt/curl",
 	"description": "cURL object wrapper.",
 	"type": "library",
+	"minimum-stability": "dev",
+	"repositories": [
+		{
+			"type": "path",
+			"url": "/home/g105b/Code/PhpGt/Http",
+			"options": {
+				"symlink": true
+			}
+		}
+	],
 
 	"require": {
-		"php": ">=7.2.0",
+		"php": ">=8.0",
 		"ext-curl": "*",
-		"ext-json": "*"
+		"ext-json": "*",
+		"phpgt/http": "dev-45-type-safety",
+		"phpgt/promise": "^2.0",
+
+		"php-http/httplug": "^2.2.0"
 	},
 
 	"require-dev": {
 		"phpunit/phpunit": "9.*",
 		"phpstan/phpstan": ">=0.12.64"
+	},
+
+	"provide": {
+		"php-http/client-implementation": "1.0",
+		"php-http/async-client-implementation": "1.0",
+		"psr/http-client-implementation": "1.0"
 	},
 
 	"license": "MIT",
@@ -38,6 +58,15 @@
 		"curl",
 		"curl_multi",
 		"interface",
-		"http"
+		"http",
+		"async",
+		"asynchronous"
+	],
+
+	"funding": [
+		{
+			"type": "github",
+			"url": "https://github.com/sponsors/PhpGt"
+		}
 	]
 }
